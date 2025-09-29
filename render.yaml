@@ -1,0 +1,16 @@
+# Render deployment configuration
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: shdh-oregon-wiki
+    runtime: docker
+    repo: https://github.com/YOUR-USERNAME/shdh-oregon-wiki
+    branch: main
+    healthCheckPath: /
+    dockerCommand: gollum --port 4567 --host 0.0.0.0 --ref main --allow-uploads page --h1-title --no-edit
+    envVars:
+      - key: PORT
+        value: 4567
+      - key: RACK_ENV
+        value: production

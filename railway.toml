@@ -1,0 +1,20 @@
+# Railway deployment configuration
+# https://docs.railway.app/deploy/config-as-code
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "./Dockerfile"
+
+[deploy]
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+
+[[services]]
+name = "shdh-oregon-wiki"
+port = 4567
+
+# Environment variables (if needed)
+# [services.shdh-oregon-wiki.env]
+# RACK_ENV = "production"
