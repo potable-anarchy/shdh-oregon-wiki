@@ -158,7 +158,7 @@ Have an idea but need help? List it here!
 ### Where to Deploy
 - [GitHub Pages](https://pages.github.com) - Static sites
 - [Netlify](https://netlify.com) - JAMstack sites
-- [Railway](https://railway.app) - Full stack apps
+- [Render](https://render.com) - Full stack apps
 - [Vercel](https://vercel.com) - Next.js specialist
 
 ### Where to Share

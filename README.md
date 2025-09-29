@@ -63,7 +63,7 @@ shdh-oregon-wiki/
 
 ## 🚢 Deployment
 
-### Deploy to Render (Recommended)
+### Deploy to Render
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
@@ -78,19 +78,6 @@ shdh-oregon-wiki/
 4. Click "Create Web Service"
 
 The `render.yaml` file is already configured for one-click deployment.
-
-### Deploy to Railway (Alternative)
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template)
-
-1. Click the button above or create a new Railway project
-2. Connect your GitHub repository
-3. Railway will auto-detect the Dockerfile
-4. Set environment variables if needed:
-   ```
-   PORT=4567
-   ```
-5. Deploy!
 
 ### Manual Docker Deployment
 

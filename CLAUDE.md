@@ -80,7 +80,7 @@ docker run -p 4567:4567 -v $(pwd):/wiki shdh-oregon-wiki
 
 1. Production should disable direct editing (--no-edit flag)
 2. All changes go through GitHub PR workflow
-3. Consider platforms: Railway, Render, or Fly.io
+3. Deployed on Render with auto-deploy from GitHub
 4. Environment should be containerized for consistency
 
 ## Security Notes

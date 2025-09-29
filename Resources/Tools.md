@@ -109,8 +109,7 @@ Essential tools and software for productive hacking at SHDH. Most are free or ha
 - **[Surge.sh](https://surge.sh/)** - Simple CLI deploy
 
 ### Full Stack
-- **[Railway](https://railway.app/)** - Simple cloud platform
-- **[Render](https://render.com/)** - Heroku alternative
+- **[Render](https://render.com/)** - Simple cloud platform, Heroku alternative
 - **[Fly.io](https://fly.io/)** - Edge computing
 - **[DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform)** - Simple PaaS
 - **[Heroku](https://www.heroku.com/)** - The classic (paid)
