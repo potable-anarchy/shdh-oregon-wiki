@@ -28,8 +28,12 @@ RUN gem install \
     rouge \
     && gem cleanup
 
-# Copy wiki content (excluding .git to avoid ownership issues)
-COPY --chown=wiki:wiki . /wiki
+# Copy wiki content
+COPY . /wiki
+
+# Remove any existing .git directory and fix ownership
+RUN rm -rf /wiki/.git && \
+    chown -R wiki:wiki /wiki
 
 # Switch to non-root user BEFORE git operations
 USER wiki
