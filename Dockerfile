@@ -28,8 +28,18 @@ RUN gem install \
     rouge \
     && gem cleanup
 
-# Copy wiki content (if building with content)
+# Copy wiki content and ensure it's a git repository
 COPY --chown=wiki:wiki . /wiki
+
+# Initialize git repo if not already initialized
+# This ensures Gollum can find the repository
+RUN if [ ! -d /wiki/.git ]; then \
+        git config --global user.email "wiki@render.com" && \
+        git config --global user.name "Render Wiki" && \
+        git init && \
+        git add . && \
+        git commit -m "Initial wiki content"; \
+    fi
 
 # Switch to non-root user
 USER wiki
