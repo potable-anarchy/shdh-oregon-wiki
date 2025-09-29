@@ -28,21 +28,20 @@ RUN gem install \
     rouge \
     && gem cleanup
 
-# Copy wiki content
+# Copy wiki content (excluding .git to avoid ownership issues)
 COPY --chown=wiki:wiki . /wiki
 
 # Switch to non-root user BEFORE git operations
 USER wiki
 
-# Initialize git repo if not already initialized
-# This ensures Gollum can find the repository and it's owned by wiki user
-RUN if [ ! -d /wiki/.git ]; then \
-        git config --global user.email "wiki@render.com" && \
-        git config --global user.name "Render Wiki" && \
-        git init && \
-        git add . && \
-        git commit -m "Initial wiki content"; \
-    fi
+# Initialize git repo as wiki user
+# This ensures the repository is owned by wiki user
+RUN git config --global user.email "wiki@render.com" && \
+    git config --global user.name "Render Wiki" && \
+    git config --global init.defaultBranch main && \
+    git init && \
+    git add . && \
+    git commit -m "Initial wiki content"
 
 # Expose Gollum's default port
 EXPOSE 4567
