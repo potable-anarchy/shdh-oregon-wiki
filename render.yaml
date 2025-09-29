@@ -5,7 +5,7 @@ services:
   - type: web
     name: shdh-oregon-wiki
     runtime: docker
-    repo: https://github.com/YOUR-USERNAME/shdh-oregon-wiki
+    repo: https://github.com/potable-anarchy/shdh-oregon-wiki
     branch: main
     healthCheckPath: /
     dockerCommand: gollum --port 4567 --host 0.0.0.0 --ref main --allow-uploads page --h1-title --no-edit
