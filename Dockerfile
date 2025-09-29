@@ -18,9 +18,10 @@ RUN addgroup -g 1000 wiki && \
 WORKDIR /wiki
 
 # Install Gollum and required gems
+# Note: github-markdown removed due to Alpine compilation issues
+# Gollum will use redcarpet or kramdown as fallback
 RUN gem install \
     gollum \
-    github-markdown \
     redcarpet \
     kramdown \
     kramdown-parser-gfm \
